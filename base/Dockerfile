@@ -1,4 +1,5 @@
-FROM docker.io/library/debian:bullseye-slim
+#FROM docker.io/library/debian:bullseye-slim
+FROM ubuntu:22.04
 
 ARG JITSI_RELEASE=stable
 ARG TARGETPLATFORM

@@ -33,7 +33,6 @@ release:
 buildx:
 	docker buildx build \
 		--platform linux/amd64,linux/arm64 \
-		--progress=plain \
 		$(BUILD_ARGS) --build-arg BASE_TAG=$(JITSI_BUILD) \
 		--pull --push \
 		--tag $(JITSI_REPO)/$(JITSI_SERVICE):$(JITSI_BUILD) \
@@ -52,7 +51,6 @@ build:
 	@echo "Building for $(TARGETPLATFORM)"
 	docker build \
 		$(BUILD_ARGS) --build-arg TARGETPLATFORM=$(TARGETPLATFORM) \
-		--progress plain \
 		--tag $(JITSI_REPO)/$(JITSI_SERVICE) \
 		$(JITSI_SERVICE)
 endif
